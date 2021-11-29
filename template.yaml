@@ -1,9 +1,9 @@
 apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
-  name: rails-project
-  title: Rails prroject template
-  description: scaffolder Rails app
+  name: react-project
+  title: Rails project template
+  description: scaffolder React app
 spec:
   owner: abinbev/maz-devops-force
   type: service
@@ -12,7 +12,6 @@ spec:
     - title: Fill in some steps
       required:
         - name
-        - owner
       properties:
         name:
           title: Name
