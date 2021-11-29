@@ -20,6 +20,13 @@ spec:
           ui:autofocus: true
           ui:options:
             rows: 5
+        description:
+          title: Description
+          type: string
+          description: Description for the project
+          ui:autofocus: true
+          ui:options:
+            rows: 5
         owner:
           title: Owner
           type: string
@@ -51,23 +58,7 @@ spec:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
 
-    - name: Write Catalog information
-      action: catalog:write
-      input:
-        component:
-          apiVersion: 'backstage.io/v1alpha1'
-          kind: Component
-          metadata:
-            name: '{{ parameters.name }}'
-            annotations:
-              github.com/project-slug: '{{ projectSlug parameters.repoUrl }}'
-          spec:
-            type: service
-            lifecycle: production
-            owner: '{{ parameters.owner }}'
-
     - id: publish
-      if: '{{ not parameters.dryRun }}'
       name: Publish
       action: publish:github
       input:
@@ -76,18 +67,11 @@ spec:
         repoUrl: '{{ parameters.repoUrl }}'
 
     - id: register
-      if: '{{ not parameters.dryRun }}'
       name: Register
       action: catalog:register
       input:
         repoContentsUrl: '{{ steps.publish.output.repoContentsUrl }}'
         catalogInfoPath: '/catalog-info.yaml'
-
-    - name: Results
-      if: '{{ parameters.dryRun }}'
-      action: debug:log
-      input:
-        listWorkspace: true
 
   output:
     links:
