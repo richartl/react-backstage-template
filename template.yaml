@@ -2,8 +2,12 @@ apiVersion: backstage.io/v1beta2
 kind: Template
 metadata:
   name: react-project
-  title: Rails project template
-  description: scaffolder React app
+  title: React project template
+  description: AbInbev React scaffold
+  tags:
+    - react
+    - javascript
+    - frontend
 spec:
   owner: abinbev/maz-devops-force
   type: service
