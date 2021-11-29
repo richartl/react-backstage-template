@@ -44,9 +44,9 @@ spec:
   steps:
     - id: fetch-base
       name: Fetch Base
-      action: fetch:rails
+      action: fetch:template
       input:
-        url: ./template
+        url: ./skeleton
         values:
           name: '{{ parameters.name }}'
           owner: '{{ parameters.owner }}'
