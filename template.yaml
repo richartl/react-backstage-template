@@ -11,7 +11,7 @@ metadata:
     - scaffold
 spec:
   owner: abinbev/maz-devops-force
-  type: service
+  type: website
 
   parameters:
     - title: Fill in some steps
