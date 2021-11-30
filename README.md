@@ -1,2 +1,2 @@
-# rails-backstage-template
-Rails backstage template
+# react-backstage-template
+React backstage template

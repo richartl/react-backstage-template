@@ -5,6 +5,10 @@ metadata:
   description: ${{values.description | dump}}
   annotations:
     github.com/project-slug: ${{values.destination.owner + "/" + values.destination.repo}}
+  tags:
+    - react
+    - javascript
+    - frontend
 spec:
   type: website
   lifecycle: experimental
