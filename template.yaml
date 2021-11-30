@@ -8,6 +8,7 @@ metadata:
     - react
     - javascript
     - frontend
+    - scaffold
 spec:
   owner: abinbev/maz-devops-force
   type: service
